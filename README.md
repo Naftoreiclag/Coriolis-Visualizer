@@ -21,9 +21,9 @@ The actual part that I wrote, `main.c`, is licensed by me under the [3-Clause BS
 > R. Stöckli, E. Vermote, N. Saleous, R. Simmon and D. Herring (2005).
 > The Blue Marble Next Generation - A true color earth dataset including seasonal dynamics from MODIS.
 > Published by the NASA Earth Observatory.
-> Corresponding author: rѕtοсklі (AT) climate.gsfc.nasa.gov
+> Corresponding author: rѕtοсklі(AT)climate.gsfc.nasa.gov
 
-*A copy of the readme included with the Blue Marble Next Generation file mentioned above is included as `docs/bmng.pdf`. Also, I obscured the email address above a bit to try avoid web spiders from adding it to spam lists. Replace the contents in the parentheses with the corresponding symbol needed in all email addresses. Also do not try to "copy and paste" it.*
+*A copy of the readme included with the Blue Marble Next Generation file mentioned above is included as `docs/bmng.pdf`. Also, I obscured the email address above a bit to try avoid web spiders from adding it to spam lists. Replace the parentheses and their contents with the corresponding symbol needed in all email addresses. Also do not try to "copy and paste" it.*
 
 `starmap.png` is a derivative of the file `starmap_g4k.jpg` widely available at NASA's [Scientific Visualization Studio](https://svs.gsfc.nasa.gov/3895).
 > NASA/Goddard Space Flight Center Scientific Visualization Studio.
