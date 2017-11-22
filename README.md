@@ -11,6 +11,8 @@ There are many problems with this source code, including:
 
 That being said, if you can get something vaguely Earth-like to come out of this program, consider yourself lucky. I was going for the popular pressing-deadlines-write-sloppy-but-fast approach when writing this C.
 
+Optionally compilable with [OpenMP](http://www.openmp.org).
+
 ## Credits
 
 The actual part that I wrote, `main.c`, is licensed by me under the [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause). See the contents of `main.c` for more details.
