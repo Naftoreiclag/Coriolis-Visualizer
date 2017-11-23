@@ -2,15 +2,30 @@
 
 Copyright 2017 James Fong
 
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions are met:
 
-1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+1. Redistributions of source code must retain the above copyright notice, 
+this list of conditions and the following disclaimer.
 
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+2. Redistributions in binary form must reproduce the above copyright notice, 
+this list of conditions and the following disclaimer in the documentation 
+and/or other materials provided with the distribution.
 
-3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+3. Neither the name of the copyright holder nor the names of its contributors 
+may be used to endorse or promote products derived from this software without 
+specific prior written permission.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE 
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
@@ -40,6 +55,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #define FRAME_COUNT 300
 
 #define RENDER_THICK 50
+
+#define DRAW_OCTOPUS 0
 
 #ifndef M_PI
     #define M_PI 3.1415926535897932384626433832795028841971694
@@ -390,7 +407,7 @@ Color raytrace(Vec3 src, Vec3 norm_dir, int pixel_id, double anim_time) {
     int steps_per_day = dsteps_per_day;
     int pulse_shift = (int) (anim_time * dsteps_per_day);
     
-    if (0 && sphere_intersect_ray(src, norm_dir, 
+    if (DRAW_OCTOPUS && sphere_intersect_ray(src, norm_dir, 
             g_earth_radius + (RENDER_THICK / 2), 
             g_earth_loc, &other_hit) != NO_HIT) {
         for (int arm_idx_raw = 0; arm_idx_raw < OCTOPUS_ARMS; ++arm_idx_raw) {
@@ -560,19 +577,19 @@ int main(int argc, char* argv[]) {
         #endif
         double anim_time = ((double) frame_idx) / 30.0;
         // Earth arrival (300 frames)
+        /*
         g_cam_loc = lat_long_to_dir(0, 
                 M_PI / -2, 
                 pow(2.71828, -anim_time * 1.5424948470) * 5000000 + 18000);
         cam_lookat(g_earth_loc, vec_new(0, 1, 0));
+        */
         // Apollo blue marble recreation
-        /*
         g_cam_loc = lat_long_to_dir(
                 -0.4994, 
                 0.6592, 
                 g_earth_radius + 29000);
         g_cam_focal_len = 4.0;
         cam_lookat(g_earth_loc, vec_new(0, 1, 0));
-        */
 		// Introduction
         /*
         g_cam_loc = lat_long_to_dir(0, M_PI / -2, 18000);
